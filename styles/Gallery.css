@@ -1,0 +1,25 @@
+.gallery-wrapper{
+    padding-top: 110px;
+    margin-bottom: 30px;
+}
+.gallery-wrapper h1{
+    color: #ff6900;
+    font-weight: 700;
+}
+.gallery-wrapper p{
+    color: #535353;
+}
+.img-gallery{
+    width:300px !important;
+    height: 300px !important;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 780px) {
+    .img-gallery {
+      width: 500px !important;
+      height: 300px !important;
+    }
+  }
