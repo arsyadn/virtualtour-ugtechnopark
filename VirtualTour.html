@@ -82,15 +82,29 @@
     <script src="https://pchen66.github.io/js/panolens/panolens.min.js"></script>
     <script>
 
-      var panorama, viewer;
-      const panoHTML = document.querySelector(".pano-lens");
+      let panoHTML = document.querySelector(".pano-lens");
+      let sourceImage = 'test.jpg';
 
-      panorama = new PANOLENS.VideoPanorama( 'techno_park.mp4', { autoplay: true } );
+      // let panorama = new PANOLENS.ImagePanorama('https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/tunnel.jpg');
+      let panorama = new PANOLENS.ImagePanorama('test.jpg');
+      let panorama2 = new PANOLENS.ImagePanorama( 'https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/sunset.jpg' );
 
-      viewer = new PANOLENS.Viewer({
+      let infospot = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+      infospot.position.set( -100, -500, -5000 );
+      infospot.addHoverText( "The Story" );
+      infospot.addEventListener( 'click', function(){
+        viewer.setPanorama( panorama2 );
+      } );
+      panorama.add( infospot );
+
+
+      let viewer = new PANOLENS.Viewer({ 
         container: panoHTML
-      });
-      viewer.add( panorama );
+       });
+       viewer.add(panorama, panorama2);
+       viewer.addUpdateCallback(function(){
+  
+      }); 
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
