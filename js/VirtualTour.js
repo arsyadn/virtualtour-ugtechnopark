@@ -25,17 +25,17 @@ infospotTugu.addEventListener( 'click', function(){
 } );
 
 let infospotTugu2 = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotTugu.position.set( -8000, 500, 5000 );
-infospotTugu.addHoverText( "Next Taman Siste" );
-infospotTugu.addEventListener( 'click', function(){
+infospotTugu2.position.set( -8000, 500, 5000 );
+infospotTugu2.addHoverText( "Next Taman Siste" );
+infospotTugu2.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
 } );
 
 // Front Taman Siste
 let infospotFrontPark = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotTugu.position.set( 15000, 500, 5000 );
-infospotTugu.addHoverText( "Back to Tugu" );
-infospotTugu.addEventListener( 'click', function(){
+infospotFrontPark.position.set( 15000, 500, 5000 );
+infospotFrontPark.addHoverText( "Back to Tugu" );
+infospotFrontPark.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
 } );
 
@@ -45,15 +45,14 @@ infospotTugu.addEventListener( 'click', function(){
 
 
 panoramaGate.add( infospotGate );
-panoramaTugu.add( infospotTugu );
+panoramaTugu.add( infospotTugu, infospotTugu2 );
 panoramaFrontPark.add( infospotFrontPark );
-
 
 
 
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu);
+ viewer.add(panoramaGate, panoramaTugu, panoramaTugu2, panoramaFrontPark);
  viewer.addUpdateCallback(function(){
 }); 
