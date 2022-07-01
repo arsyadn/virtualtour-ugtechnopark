@@ -25,7 +25,7 @@ infospotTugu.addEventListener( 'click', function(){
 } );
 
 let infospotTugu2 = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotTugu2.position.set( 30000, 500, 5000 );
+infospotTugu2.position.set( -500, -500, 5000 );
 infospotTugu2.addHoverText( "Next Taman Siste" );
 infospotTugu2.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
