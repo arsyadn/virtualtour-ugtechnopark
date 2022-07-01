@@ -1,10 +1,10 @@
 let panoHTML = document.querySelector(".pano-lens");
 let sourceImage = 'test.jpg';
 
-let panoramaGate = new PANOLENS.ImagePanorama('https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/tunnel.jpg');
-let panoramaTugu = new PANOLENS.ImagePanorama( 'https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/sunset.jpg' );
-// let panoramaGate = new PANOLENS.ImagePanorama('./assets/images/img1_gate.jpg');
-// let panoramaTugu = new PANOLENS.ImagePanorama('./assets/images/img2_tugu.jpg');
+// let panoramaGate = new PANOLENS.ImagePanorama('https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/tunnel.jpg');
+// let panoramaTugu = new PANOLENS.ImagePanorama( 'https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/sunset.jpg' );
+let panoramaGate = new PANOLENS.ImagePanorama('./assets/images/img1_gate.jpg');
+let panoramaTugu = new PANOLENS.ImagePanorama('./assets/images/img2_tugu.jpg');
 let panoramaFrontPark = new PANOLENS.ImagePanorama('./assets/images/img3_frontparksiste.jpg');
 let panoramaSistePark = new PANOLENS.ImagePanorama('./assets/images/img3a_tamansiste.jpg');
 
