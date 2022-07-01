@@ -18,10 +18,10 @@ let infospot2 = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospot2.position.set( 100, 500, 5000 );
 infospot2.addHoverText( "Back to Main" );
 infospot2.addEventListener( 'click', function(){
-  viewer.setPanorama( panorama2 );
+  viewer.setPanorama( panorama );
 } );
-panorama.add( infospot, infospot2 );
-// panorama2.add( infospot2 );
+panorama.add( infospot );
+panorama2.add( infospot2 );
 
 
 
