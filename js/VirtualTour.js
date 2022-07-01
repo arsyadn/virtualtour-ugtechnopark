@@ -33,7 +33,7 @@ infospotTugu2.addEventListener( 'click', function(){
 
 // Front Taman Siste
 let infospotFrontPark = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontPark.position.set( -2000, 500, 5000 );
+infospotFrontPark.position.set( 100, 500, 5000 );
 infospotFrontPark.addHoverText( "Back to Tugu" );
 infospotFrontPark.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
