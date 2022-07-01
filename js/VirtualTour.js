@@ -25,7 +25,7 @@ infospotTugu.addEventListener( 'click', function(){
 } );
 
 let infospotTugu2 = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotTugu2.position.set( -20000, 500, 5000 );
+infospotTugu2.position.set( 100, 500, 5000 );
 infospotTugu2.addHoverText( "Next Taman Siste" );
 infospotTugu2.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
@@ -33,7 +33,7 @@ infospotTugu2.addEventListener( 'click', function(){
 
 // Front Taman Siste
 let infospotFrontPark = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontPark.position.set( -15000, 500, 5000 );
+infospotFrontPark.position.set( 100, 500, 5000 );
 infospotFrontPark.addHoverText( "Back to Tugu" );
 infospotFrontPark.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
