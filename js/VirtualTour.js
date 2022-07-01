@@ -53,6 +53,6 @@ panoramaFrontPark.add( infospotFrontPark );
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaTugu2, panoramaFrontPark);
+ viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark);
  viewer.addUpdateCallback(function(){
 }); 
