@@ -160,10 +160,10 @@ infospotTubeHouse.addEventListener( 'click', function(){
 } );
 
 let infospotTubeHouseB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotTubeHouseB.position.set( 3000, -500, 5000 );
+infospotTubeHouseB.position.set( -3000, -500, 5000 );
 infospotTubeHouseB.addHoverText( "Lanjut Tour Rumah Kebun" );
 infospotTubeHouseB.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaFrontPark );
+  viewer.setPanorama( panoramaKebunHouse );
 } );
 
 // 7. Kebun House (panoramaKebunHouse)
@@ -217,7 +217,6 @@ panoramaTubeHouse.add(infospotTubeHouse, infospotTubeHouseB);
 panoramaKebunHouse.add(infospotKebunHouse, infospotKebunHouseB);
 // Mosque
 panoramaMosque.add(infospotMosque, infospotMosqueB);
-
 
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
