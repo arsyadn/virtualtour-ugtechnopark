@@ -3,10 +3,14 @@ let sourceImage = 'test.jpg';
 
 // let panoramaGate = new PANOLENS.ImagePanorama('https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/tunnel.jpg');
 // let panoramaTugu = new PANOLENS.ImagePanorama( 'https://pchen66.github.io/Panolens/examples/asset/textures/equirectangular/sunset.jpg' );
+
 let panoramaGate = new PANOLENS.ImagePanorama('./assets/images/img1_gate.jpg');
 let panoramaTugu = new PANOLENS.ImagePanorama('./assets/images/img2_tugu.jpg');
 let panoramaFrontPark = new PANOLENS.ImagePanorama('./assets/images/img3_frontparksiste.jpg');
+// Taman Siste
 let panoramaInsideSiste = new PANOLENS.ImagePanorama('./assets/images/img3a_insideparksiste.jpg');
+let panoramaSaungSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_saungsiste.jpg');
+let panoramaSaungMerahSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_saungmerahsiste.jpg');
 
 // 1.  Gate (panoramaGate)
 let infospotGate = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
@@ -55,21 +59,19 @@ infospotFrontParkC.addEventListener( 'click', function(){
 
 // 3a. Inside Taman Siste (panoramaInsideSiste)
 let infospotInsideSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotInsideSiste.position.set( 500, 500, 5000 );
+infospotInsideSiste.position.set( -3000, 500, 5000 );
 infospotInsideSiste.addHoverText( "Kembali ke Depan Taman Siste" );
 infospotInsideSiste.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
 } );
 
-// Saung
 let infospotInsideSisteB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotInsideSisteB.position.set( 0, 500, 5000 );
+infospotInsideSisteB.position.set( -3000, 500, 5000 );
 infospotInsideSisteB.addHoverText( "Ke Saung" );
 infospotInsideSisteB.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaTugu );
+  viewer.setPanorama( panoramaSaungSiste );
 } );
 
-// Saung Merah
 let infospotInsideSisteC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotInsideSisteB.position.set( -3000, -500, -5000 );
 infospotInsideSisteB.addHoverText( "Ke Saung Merah" );
@@ -77,20 +79,36 @@ infospotInsideSisteB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
 } );
 
+// 3aa. Saung (panoramaSaungSiste)
+let infospotSaungSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotSaungSiste.position.set( 100, -500, -5000 );
+infospotSaungSiste.addHoverText( "Kembali" );
+infospotSaungSiste.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaInsideSiste );
+} );
+
+// 3ab. Saung Merah (panoramaSaungMerahSiste)
+let infospotSaungMerahSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotSaungMerahSiste.position.set( 100, -500, 5000 );
+infospotSaungMerahSiste.addHoverText( "Kembali" );
+infospotSaungMerahSiste.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaInsideSiste );
+} );
 
 
 
-panoramaGate.add( infospotGate );
-panoramaTugu.add( infospotTugu, infospotTugu2 );
-panoramaFrontPark.add( infospotFrontPark, infospotFrontParkB, infospotFrontParkC);
-panoramaInsideSiste.add( infospotInsideSiste, infospotInsideSisteB)
-
-
+panoramaGate.add(infospotGate);
+panoramaTugu.add(infospotTugu, infospotTugu2);
+panoramaFrontPark.add(infospotFrontPark, infospotFrontParkB, infospotFrontParkC);
+// Taman Siste
+panoramaInsideSiste.add(infospotInsideSiste, infospotInsideSisteB);
+panoramaSaungSiste.add(infospotSaungSiste);
+panoramaSaungMerahSiste.add(infospotSaungMerahSiste);
 
 
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste );
+ viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste, panoramaSaungSiste, panoramaSaungMerahSiste );
  viewer.addUpdateCallback(function(){
 }); 
