@@ -114,7 +114,7 @@ let infospotFrontHiasB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotFrontHiasB.position.set( 3000, -500, 5000 );
 infospotFrontHiasB.addHoverText( "Lanjut Tour" );
 infospotFrontHiasB.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaSaungMerahSiste );
+  viewer.setPanorama( panoramaFlowersPark );
 } );
 
 let infospotFrontHiasC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
@@ -195,6 +195,6 @@ let viewer = new PANOLENS.Viewer({
   panoramaInsideHias, 
   panoramaFlowersPark,
   panoramaTubeHouse );
-  
+
  viewer.addUpdateCallback(function(){
 }); 
