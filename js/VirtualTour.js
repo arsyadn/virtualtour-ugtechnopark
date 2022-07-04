@@ -66,7 +66,7 @@ infospotInsideSiste.addEventListener( 'click', function(){
 } );
 
 let infospotInsideSisteB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotInsideSisteB.position.set( 3000, 500, 5000 );
+infospotInsideSisteB.position.set( -3000, -500, 5000 );
 infospotInsideSisteB.addHoverText( "Ke Saung" );
 infospotInsideSisteB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaSaungSiste );
@@ -81,7 +81,7 @@ infospotInsideSisteC.addEventListener( 'click', function(){
 
 // // 3aa. Saung (panoramaSaungSiste)
 let infospotSaungSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotSaungSiste.position.set( 100, -500, -5000 );
+infospotSaungSiste.position.set( -5000, -500, -5000 );
 infospotSaungSiste.addHoverText( "Kembali" );
 infospotSaungSiste.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaInsideSiste );
@@ -89,7 +89,7 @@ infospotSaungSiste.addEventListener( 'click', function(){
 
 // // 3ab. Saung Merah (panoramaSaungMerahSiste)
 let infospotSaungMerahSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotSaungMerahSiste.position.set( 100, -500, 5000 );
+infospotSaungMerahSiste.position.set( -5000, -500, 5000 );
 infospotSaungMerahSiste.addHoverText( "Kembali" );
 infospotSaungMerahSiste.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaInsideSiste );
