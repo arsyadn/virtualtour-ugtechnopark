@@ -13,6 +13,7 @@ let panoramaSaungSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_saun
 let panoramaSaungMerahSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_saungmerahsiste.jpg');
 // Taman Hias
 let panoramaFrontHias = new PANOLENS.ImagePanorama('./assets/images/img4_fronthias.jpg');
+let panoramaInsideHias = new PANOLENS.ImagePanorama('./assets/images/img4a_insidehias.jpg');
 
 // 1.  Gate (panoramaGate)
 let infospotGate = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
@@ -99,26 +100,33 @@ infospotSaungMerahSiste.addEventListener( 'click', function(){
 
 // 4. Taman Hias (panoramaFrontHias)
 let infospotFrontHias = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontHias.position.set( 0, -500, -5000 );
+infospotFrontHias.position.set( 0, -500, 5000 );
 infospotFrontHias.addHoverText( "Kembali ke Sebelumnya" );
 infospotFrontHias.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
 } );
 
 let infospotFrontHiasB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontHiasB.position.set( -3000, -500, -5000 );
+infospotFrontHiasB.position.set( -3000, -500, 5000 );
 infospotFrontHiasB.addHoverText( "Lanjut Tour" );
 infospotFrontHiasB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaSaungMerahSiste );
 } );
 
 let infospotFrontHiasC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontHiasC.position.set( -3000, -500, 5000 );
+infospotFrontHiasC.position.set( -3000, -500, -5000 );
 infospotFrontHiasC.addHoverText( "Masuk ke Taman Hias" );
 infospotFrontHiasC.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaFrontPark );
+  viewer.setPanorama( panoramaInsideHias );
 } );
 
+// 4a. Inside Taman Hias (panoramaInsideHias)
+let infospotInsideHias = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotInsideHias.position.set( -3000, -500, 5000 );
+infospotInsideHias.addHoverText( "Kembali" );
+infospotInsideHias.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaFrontPark );
+} );
 
 panoramaGate.add(infospotGate);
 panoramaTugu.add(infospotTugu, infospotTugu2);
@@ -127,14 +135,14 @@ panoramaFrontPark.add(infospotFrontPark, infospotFrontParkB, infospotFrontParkC)
 panoramaInsideSiste.add(infospotInsideSiste, infospotInsideSisteB, infospotInsideSisteC);
 panoramaSaungSiste.add(infospotSaungSiste);
 panoramaSaungMerahSiste.add(infospotSaungMerahSiste);
-
 // Taman Hias
 panoramaFrontHias.add(infospotFrontHias, infospotFrontHiasB, infospotFrontHiasC);
+panoramaInsideHias.add(infospotInsideHias);
 
 
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste, panoramaSaungSiste, panoramaSaungMerahSiste, panoramaFrontHias );
+ viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste, panoramaSaungSiste, panoramaSaungMerahSiste, panoramaFrontHias, panoramaInsideHias );
  viewer.addUpdateCallback(function(){
 }); 
