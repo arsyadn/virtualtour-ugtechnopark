@@ -18,6 +18,10 @@ let panoramaInsideHias = new PANOLENS.ImagePanorama('./assets/images/img4a_insid
 let panoramaFlowersPark = new PANOLENS.ImagePanorama('./assets/images/img5_tamanbunga.jpg');
 // Tube House
 let panoramaTubeHouse = new PANOLENS.ImagePanorama('./assets/images/img6_tabunghouse.jpg');
+// Rumah Kebun
+let panoramaKebunHouse = new PANOLENS.ImagePanorama('./assets/images/img7_kebunhouse.jpg');
+// Masjid
+let panoramaMosque = new PANOLENS.ImagePanorama('./assets/images/img8_masjid.jpg');
 
 // 1.  Gate (panoramaGate)
 let infospotGate = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
@@ -156,10 +160,40 @@ infospotTubeHouse.addEventListener( 'click', function(){
 } );
 
 let infospotTubeHouseB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotTubeHouseB.position.set( -3000, -500, 5000 );
-infospotTubeHouseB.addHoverText( "Lanjut Tour" );
+infospotTubeHouseB.position.set( 3000, -500, 5000 );
+infospotTubeHouseB.addHoverText( "Lanjut Tour Rumah Kebun" );
 infospotTubeHouseB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
+} );
+
+// 7. Kebun House (panoramaKebunHouse)
+let infospotKebunHouse = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotKebunHouse.position.set( -3000, -500, -5000 );
+infospotKebunHouse.addHoverText( "Kembali Tube House" );
+infospotKebunHouse.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaTubeHouse );
+} );
+
+let infospotKebunHouseB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotKebunHouseB.position.set( -3000, -500, 5000 );
+infospotKebunHouseB.addHoverText( "Lanjut Tour Masjid" );
+infospotKebunHouseB.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaMosque );
+} );
+
+// 8. Mosque (panoramaMosque)
+let infospotMosque = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotMosque.position.set( -3000, -500, -5000 );
+infospotMosque.addHoverText( "Kembali Ke Rumah Kebun" );
+infospotMosque.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaKebunHouse );
+} );
+
+let infospotMosqueB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotMosqueB.position.set( 3000, -500, 5000 );
+infospotMosqueB.addHoverText( "Kembali Ke Gerbang Utama" );
+infospotMosqueB.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaGate );
 } );
 
 
@@ -179,6 +213,10 @@ panoramaInsideHias.add(infospotInsideHias);
 panoramaFlowersPark.add(infospotFlowersPark, infospotFlowersParkB);
 // Tube House
 panoramaTubeHouse.add(infospotTubeHouse, infospotTubeHouseB);
+// Kebun House
+panoramaKebunHouse.add(infospotKebunHouse, infospotKebunHouseB);
+// Mosque
+panoramaMosque.add(infospotMosque, infospotMosqueB);
 
 
 let viewer = new PANOLENS.Viewer({ 
@@ -194,7 +232,9 @@ let viewer = new PANOLENS.Viewer({
   panoramaFrontHias, 
   panoramaInsideHias, 
   panoramaFlowersPark,
-  panoramaTubeHouse );
+  panoramaTubeHouse,
+  panoramaKebunHouse,
+  panoramaMosque);
 
  viewer.addUpdateCallback(function(){
 }); 
