@@ -48,7 +48,7 @@ infospotFrontParkB.addEventListener( 'click', function(){
 } );
 
 let infospotFrontParkC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontParkC.position.set( 10000, 500, 5000 );
+infospotFrontParkC.position.set( 0, 500, 5000 );
 infospotFrontParkC.addHoverText( "Next Tour" );
 infospotFrontParkC.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaSistePark );
@@ -63,7 +63,7 @@ infospotSistePark.addEventListener( 'click', function(){
 } );
 
 let infospotSisteParkB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotSisteParkB.position.set( 3000, 500, 5000 );
+infospotSisteParkB.position.set( -3000, -500, -5000 );
 infospotSisteParkB.addHoverText( "Inside Taman Siste" );
 infospotSisteParkB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
