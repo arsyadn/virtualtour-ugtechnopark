@@ -6,7 +6,6 @@ let sourceImage = 'test.jpg';
 let panoramaGate = new PANOLENS.ImagePanorama('./assets/images/img1_gate.jpg');
 let panoramaTugu = new PANOLENS.ImagePanorama('./assets/images/img2_tugu.jpg');
 let panoramaFrontPark = new PANOLENS.ImagePanorama('./assets/images/img3_frontparksiste.jpg');
-let panoramaSistePark = new PANOLENS.ImagePanorama('./assets/images/img3a_tamansiste.jpg');
 let panoramaInsideSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_insidetamansiste.jpg');
 
 // 1.  Gate (panoramaGate)
@@ -41,7 +40,7 @@ infospotFrontPark.addEventListener( 'click', function(){
 } );
 
 let infospotFrontParkB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontParkB.position.set( 2000, 500, 5000 );
+infospotFrontParkB.position.set( 0, -500, -5000 );
 infospotFrontParkB.addHoverText( "Taman Siste" );
 infospotFrontParkB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaInsideSiste );
@@ -51,30 +50,22 @@ let infospotFrontParkC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotFrontParkC.position.set( 0, -500, -5000 );
 infospotFrontParkC.addHoverText( "Next Tour" );
 infospotFrontParkC.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaSistePark );
+  viewer.setPanorama( panoramaInsideSiste );
 } );
 
-// 3a. Taman Siste (panoramaSistePark)
-let infospotSistePark = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotSistePark.position.set( -3000, 500, 5000 );
-infospotSistePark.addHoverText( "Back to Front Taman Siste" );
-infospotSistePark.addEventListener( 'click', function(){
+// 3a. Inside Taman Siste (panoramaSistePark)
+let infospotInsideSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotInsideSiste.position.set( -3000, 500, 5000 );
+infospotInsideSiste.addHoverText( "Back to Front Taman Siste" );
+infospotInsideSiste.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
 } );
 
-let infospotSisteParkB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotSisteParkB.position.set( -3000, -500, -5000 );
-infospotSisteParkB.addHoverText( "Inside Taman Siste" );
-infospotSisteParkB.addEventListener( 'click', function(){
+let infospotInsideSisteB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotInsideSisteB.position.set( -3000, -500, -5000 );
+infospotInsideSisteB.addHoverText( "Inside Taman Siste" );
+infospotInsideSisteB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
-} );
-
-// 3aa. Inside Taman Siste (panoramaInsideSiste)
-let infospotInsideSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotInsideSiste.position.set( -2000, 500, 5000 );
-infospotInsideSiste.addHoverText( "Back to Front Taman Siste" );
-infospotInsideSiste.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaSistePark );
 } );
 
 
@@ -84,8 +75,7 @@ infospotInsideSiste.addEventListener( 'click', function(){
 panoramaGate.add( infospotGate );
 panoramaTugu.add( infospotTugu, infospotTugu2 );
 panoramaFrontPark.add( infospotFrontPark, infospotFrontParkB, infospotFrontParkC);
-panoramaSistePark.add( infospotSistePark, infospotSisteParkB )
-panoramaInsideSiste.add( infospotInsideSiste )
+panoramaInsideSiste.add( infospotInsideSiste, infospotInsideSisteB)
 
 
 
@@ -93,6 +83,6 @@ panoramaInsideSiste.add( infospotInsideSiste )
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaSistePark, panoramaInsideSiste );
+ viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste );
  viewer.addUpdateCallback(function(){
 }); 
