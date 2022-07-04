@@ -14,6 +14,10 @@ let panoramaSaungMerahSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa
 // Taman Hias
 let panoramaFrontHias = new PANOLENS.ImagePanorama('./assets/images/img4_fronthias.jpg');
 let panoramaInsideHias = new PANOLENS.ImagePanorama('./assets/images/img4a_insidehias.jpg');
+// Taman Bunga
+let panoramaFlowersPark = new PANOLENS.ImagePanorama('./assets/images/img5_tamanbunga.jpg');
+// Tube House
+let panoramaTubeHouse = new PANOLENS.ImagePanorama('./assets/images/img6_tabunghouse.jpg');
 
 // 1.  Gate (panoramaGate)
 let infospotGate = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
@@ -128,6 +132,39 @@ infospotInsideHias.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontHias );
 } );
 
+// 5. Taman Bunga (panoramaFlowersPark)
+let infospotFlowersPark = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotFlowersPark.position.set( -3000, -500, -5000 );
+infospotFlowersPark.addHoverText( "Kembali" );
+infospotFlowersPark.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaFrontHias );
+} );
+
+let infospotFlowersParkB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotFlowersParkB.position.set( -3000, -500, 5000 );
+infospotFlowersParkB.addHoverText( "Lanjut Tour" );
+infospotFlowersParkB.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaTubeHouse );
+} );
+
+// 6. Tube House (panoramaTubeHouse)
+let infospotTubeHouse = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotTubeHouse.position.set( -3000, -500, -5000 );
+infospotTubeHouse.addHoverText( "Kembali" );
+infospotTubeHouse.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaFlowersPark );
+} );
+
+let infospotTubeHouseB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotTubeHouseB.position.set( -3000, -500, 5000 );
+infospotTubeHouseB.addHoverText( "Lanjut Tour" );
+infospotTubeHouseB.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaFrontPark );
+} );
+
+
+
+
 panoramaGate.add(infospotGate);
 panoramaTugu.add(infospotTugu, infospotTugu2);
 panoramaFrontPark.add(infospotFrontPark, infospotFrontParkB, infospotFrontParkC);
@@ -138,11 +175,26 @@ panoramaSaungMerahSiste.add(infospotSaungMerahSiste);
 // Taman Hias
 panoramaFrontHias.add(infospotFrontHias, infospotFrontHiasB, infospotFrontHiasC);
 panoramaInsideHias.add(infospotInsideHias);
+// Taman Bunga
+panoramaFlowersPark.add(infospotFlowersPark, infospotFlowersParkB);
+// Tube House
+panoramaTubeHouse.add(infospotTubeHouse, infospotTubeHouseB);
 
 
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste, panoramaSaungSiste, panoramaSaungMerahSiste, panoramaFrontHias, panoramaInsideHias );
+ viewer.add(
+  panoramaGate, 
+  panoramaTugu, 
+  panoramaFrontPark, 
+  panoramaInsideSiste, 
+  panoramaSaungSiste, 
+  panoramaSaungMerahSiste, 
+  panoramaFrontHias, 
+  panoramaInsideHias, 
+  panoramaFlowersPark,
+  panoramaTubeHouse );
+  
  viewer.addUpdateCallback(function(){
 }); 
