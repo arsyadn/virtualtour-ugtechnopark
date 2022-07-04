@@ -100,14 +100,14 @@ infospotSaungMerahSiste.addEventListener( 'click', function(){
 
 // 4. Taman Hias (panoramaFrontHias)
 let infospotFrontHias = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontHias.position.set( 0, -500, 5000 );
+infospotFrontHias.position.set( -3000, -500, 5000 );
 infospotFrontHias.addHoverText( "Kembali ke Sebelumnya" );
 infospotFrontHias.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaFrontPark );
 } );
 
 let infospotFrontHiasB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontHiasB.position.set( -3000, -500, 5000 );
+infospotFrontHiasB.position.set( 3000, -500, 5000 );
 infospotFrontHiasB.addHoverText( "Lanjut Tour" );
 infospotFrontHiasB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaSaungMerahSiste );
@@ -125,7 +125,7 @@ let infospotInsideHias = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotInsideHias.position.set( -3000, -500, 5000 );
 infospotInsideHias.addHoverText( "Kembali" );
 infospotInsideHias.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaFrontPark );
+  viewer.setPanorama( panoramaFrontHias );
 } );
 
 panoramaGate.add(infospotGate);
