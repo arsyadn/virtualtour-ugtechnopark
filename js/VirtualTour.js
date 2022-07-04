@@ -11,6 +11,8 @@ let panoramaFrontPark = new PANOLENS.ImagePanorama('./assets/images/img3_frontpa
 let panoramaInsideSiste = new PANOLENS.ImagePanorama('./assets/images/img3a_insideparksiste.jpg');
 let panoramaSaungSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_saungsiste.jpg');
 let panoramaSaungMerahSiste = new PANOLENS.ImagePanorama('./assets/images/img3aa_saungmerahsiste.jpg');
+// Taman Hias
+let panoramaFrontHias = new PANOLENS.ImagePanorama('./assets/images/img4_fronthias.jpg');
 
 // 1.  Gate (panoramaGate)
 let infospotGate = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
@@ -52,7 +54,7 @@ infospotFrontParkB.addEventListener( 'click', function(){
 
 let infospotFrontParkC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotFrontParkC.position.set( 5000, 500, 5000 );
-infospotFrontParkC.addHoverText( "Lanjut Tour" );
+infospotFrontParkC.addHoverText( "Lanjut Taman Hias" );
 infospotFrontParkC.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
 } );
@@ -95,6 +97,27 @@ infospotSaungMerahSiste.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaInsideSiste );
 } );
 
+// 4. Taman Hias (panoramaFrontHias)
+let infospotFrontHias = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotFrontHias.position.set( 0, -500, -5000 );
+infospotFrontHias.addHoverText( "Kembali ke Sebelumnya" );
+infospotFrontHias.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaFrontPark );
+} );
+
+let infospotFrontHiasB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotFrontHiasB.position.set( -3000, -500, -5000 );
+infospotFrontHiasB.addHoverText( "Lanjut Tour" );
+infospotFrontHiasB.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaSaungMerahSiste );
+} );
+
+let infospotFrontHiasC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
+infospotFrontHiasC.position.set( -3000, -500, 5000 );
+infospotFrontHiasC.addHoverText( "Masuk ke Taman Hias" );
+infospotFrontHiasC.addEventListener( 'click', function(){
+  viewer.setPanorama( panoramaFrontPark );
+} );
 
 
 panoramaGate.add(infospotGate);
