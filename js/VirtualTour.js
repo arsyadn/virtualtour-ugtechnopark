@@ -56,7 +56,7 @@ let infospotFrontParkC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotFrontParkC.position.set( 5000, 500, 5000 );
 infospotFrontParkC.addHoverText( "Lanjut Taman Hias" );
 infospotFrontParkC.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaTugu );
+  viewer.setPanorama( panoramaFrontHias );
 } );
 
 // 3a. Inside Taman Siste (panoramaInsideSiste)
@@ -128,10 +128,13 @@ panoramaInsideSiste.add(infospotInsideSiste, infospotInsideSisteB, infospotInsid
 panoramaSaungSiste.add(infospotSaungSiste);
 panoramaSaungMerahSiste.add(infospotSaungMerahSiste);
 
+// Taman Hias
+panoramaFrontHias.add(infospotFrontHias, infospotFrontHiasB, infospotFrontHiasC);
+
 
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste, panoramaSaungSiste, panoramaSaungMerahSiste );
+ viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaInsideSiste, panoramaSaungSiste, panoramaSaungMerahSiste, panoramaFrontHias );
  viewer.addUpdateCallback(function(){
 }); 
