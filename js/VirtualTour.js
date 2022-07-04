@@ -33,7 +33,7 @@ infospotTugu2.addEventListener( 'click', function(){
 
 // 3. Front Taman Siste (panoramaFrontPark)
 let infospotFrontPark = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontPark.position.set( -2000, 500, 5000 );
+infospotFrontPark.position.set( 0, -500, 5000 );
 infospotFrontPark.addHoverText( "Back to Tugu" );
 infospotFrontPark.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaTugu );
@@ -47,10 +47,10 @@ infospotFrontParkB.addEventListener( 'click', function(){
 } );
 
 let infospotFrontParkC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontParkC.position.set( 0, -500, -5000 );
+infospotFrontParkC.position.set( 0, 500, -5000 );
 infospotFrontParkC.addHoverText( "Next Tour" );
 infospotFrontParkC.addEventListener( 'click', function(){
-  viewer.setPanorama( panoramaInsideSiste );
+  viewer.setPanorama( panoramaTugu );
 } );
 
 // 3a. Inside Taman Siste (panoramaSistePark)
