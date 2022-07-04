@@ -190,7 +190,7 @@ infospotMosque.addEventListener( 'click', function(){
 } );
 
 let infospotMosqueB = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotMosqueB.position.set( 3000, -500, 5000 );
+infospotMosqueB.position.set( -7000, -500, -5000 );
 infospotMosqueB.addHoverText( "Kembali Ke Gerbang Utama" );
 infospotMosqueB.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaGate );
