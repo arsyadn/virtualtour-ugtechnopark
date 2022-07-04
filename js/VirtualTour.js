@@ -48,7 +48,7 @@ infospotFrontParkB.addEventListener( 'click', function(){
 } );
 
 let infospotFrontParkC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotFrontParkC.position.set( 0, 500, 5000 );
+infospotFrontParkC.position.set( 0, -500, -5000 );
 infospotFrontParkC.addHoverText( "Next Tour" );
 infospotFrontParkC.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaSistePark );
@@ -93,6 +93,6 @@ panoramaInsideSiste.add( infospotInsideSiste )
 let viewer = new PANOLENS.Viewer({ 
   container: panoHTML
  });
- viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark);
+ viewer.add(panoramaGate, panoramaTugu, panoramaFrontPark, panoramaSistePark, panoramaInsideSiste );
  viewer.addUpdateCallback(function(){
 }); 
