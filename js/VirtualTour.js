@@ -73,13 +73,13 @@ infospotInsideSisteB.addEventListener( 'click', function(){
 } );
 
 let infospotInsideSisteC = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
-infospotInsideSisteB.position.set( -3000, -500, -5000 );
-infospotInsideSisteB.addHoverText( "Ke Saung Merah" );
-infospotInsideSisteB.addEventListener( 'click', function(){
+infospotInsideSisteC.position.set( -3000, -500, -5000 );
+infospotInsideSisteC.addHoverText( "Ke Saung Merah" );
+infospotInsideSisteC.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaSaungMerahSiste );
 } );
 
-// 3aa. Saung (panoramaSaungSiste)
+// // 3aa. Saung (panoramaSaungSiste)
 let infospotSaungSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotSaungSiste.position.set( 100, -500, -5000 );
 infospotSaungSiste.addHoverText( "Kembali" );
@@ -87,7 +87,7 @@ infospotSaungSiste.addEventListener( 'click', function(){
   viewer.setPanorama( panoramaInsideSiste );
 } );
 
-// 3ab. Saung Merah (panoramaSaungMerahSiste)
+// // 3ab. Saung Merah (panoramaSaungMerahSiste)
 let infospotSaungMerahSiste = new PANOLENS.Infospot( 500, PANOLENS.DataImage.Info );
 infospotSaungMerahSiste.position.set( 100, -500, 5000 );
 infospotSaungMerahSiste.addHoverText( "Kembali" );
@@ -101,7 +101,7 @@ panoramaGate.add(infospotGate);
 panoramaTugu.add(infospotTugu, infospotTugu2);
 panoramaFrontPark.add(infospotFrontPark, infospotFrontParkB, infospotFrontParkC);
 // Taman Siste
-panoramaInsideSiste.add(infospotInsideSiste, infospotInsideSisteB, infospotInsideSisteC );
+panoramaInsideSiste.add(infospotInsideSiste, infospotInsideSisteB, infospotInsideSisteC);
 panoramaSaungSiste.add(infospotSaungSiste);
 panoramaSaungMerahSiste.add(infospotSaungMerahSiste);
 
