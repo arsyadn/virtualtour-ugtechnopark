@@ -211,3 +211,19 @@
 /* Footer */
 
 
+@media only screen and (max-width: 600px){
+    .banner-wrapper{
+        padding: 20px;
+    }
+}
+@media only screen and (max-width: 470px){
+    .navbar{
+        padding: 20px 0 !important;
+    }
+    .navbar-nav li:first-child{
+        margin-top: 10px !important;
+    }
+    .navbar-nav li > a{
+        margin: 0 !important;
+    }
+}
