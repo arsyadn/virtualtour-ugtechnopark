@@ -81,22 +81,12 @@
     height: 450px;
     margin-top:150px;
 }
-
-/* WhyUs */
-
-/* Desc */
-
 .free-wrapper{
     margin-bottom: 50px;
 }
-
 .free-desc{
     margin: 20px 0;
 }
-
-/* Desc */
-
-/* FAQ */
 .faq-wrapper{
     margin-bottom:80px !important;
     margin-top: 80px !important;
@@ -105,18 +95,6 @@
     text-align: center;
     margin-bottom: 30px;
 }
-
-@media screen and (max-width:990px){
-    .accordion{
-        margin-top:10px;
-    }
-    .accor-item{
-        width:100% !important;
-    }
-}
-/* FAQ */
-
-/* Footer */
 .footer-wrapper{
     background-color: #3A3845;
     width:100%;
@@ -125,8 +103,6 @@
 .footer p{
     color: #fff;
 }
-/* Footer */
-
 @media only screen and (max-width: 1144px) {
     .kotak{
         width: 100% !important;
@@ -147,6 +123,12 @@
 @media screen and (max-width:990px){
     .img-success{
         margin-top: 40px !important;
+    }
+    .accordion{
+        margin-top:10px;
+    }
+    .accor-item{
+        width:100% !important;
     }
 }
 @media only screen and (max-width: 600px){
